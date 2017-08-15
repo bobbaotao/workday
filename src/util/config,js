@@ -1,0 +1,4 @@
+
+export default {
+  DateFormat: 'YYYY-MM-DD'
+}
