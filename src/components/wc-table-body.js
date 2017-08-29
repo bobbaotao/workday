@@ -38,7 +38,32 @@ export default {
   methods: {
     showEditWindow: function(itemData) {
       this.$emit('ShowEditWindow', itemData);
-    }
+    },
+    getCellClass: function(itemData) {
+           if (!itemData) {
+               return "wc-cell-None";
+           }
+           switch (itemData.WorkType) {
+               case "InternalEvent":
+                   return "wc-cell-InternalEvent wc-cell";
+               case "CST":
+                   return "wc-cell-CST wc-cell";
+               case "PSS":
+                   return "wc-cell-PSS wc-cell";
+               case "Holiday":
+                   return "wc-cell-Holiday wc-cell";
+               case "AnnualLeave":
+                   return "wc-cell-AnnualLeave wc-cell";
+               case "ASS":
+                   return "wc-cell-ASS wc-cell";
+               case "Demo":
+                   return "wc-cell-Demo wc-cell";
+               case "None":
+                   return "wc-cell-None wc-cell";
+               default:
+                   return "wc-cell-None wc-cell";
+           }
+       }
   },
   components: {wcTableCell},
   render(h) {
@@ -77,7 +102,7 @@ export default {
               <tr>
                 {
                   this._l(itemData.items, itemCol =>
-                  <td style='border: 1px solid black; ' colspan={itemCol.colspan}>
+                  <td style='border: 1px solid black; ' class={this.getCellClass(itemCol.itemData)} colspan={itemCol.colspan}>
                     <wcTableCell itemData={itemCol.itemData} on-ShowEditWindow={this.showEditWindow}></wcTableCell>
                   </td>)
                 }

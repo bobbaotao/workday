@@ -38,8 +38,7 @@
     </div>
     <div class="WCTable wcDataTable" ref="wcBody">
       <wcTableBody v-bind:wcDatas="wcDataitems" v-bind:wcColumns="wccolumnHeaders"
-                  v-bind:isShowBody="true" v-bind:isShowHeader="false" v-on:ShowEditWindow="showEditWindow"
-                  >
+                  v-bind:isShowBody="true" v-bind:isShowHeader="false" v-on:ShowEditWindow="showEditWindow">
       </wcTableBody>
     </div>
     <div class="WCTable wcFixedColumnTB" ref="wcFixed">
@@ -84,13 +83,17 @@
             {value: "InternalEvent", label: "Internal Event"},
             //{value: "CST", label: "Customer Support & Training"},
             {value: "PSS", label: "Pre-sales Support"},
-            {value: "AnnualLeave", label: "Annual Leave"}
+            {value: "AnnualLeave", label: "Annual Leave"},
+            {value: "Demo", label: "Demo"},
+            {value: "ASS", label: "After Sales Support"}
           ],
           worktypeOptionsReadOnly: [
             {value: "InternalEvent", label: "Internal Event"},
             {value: "CST", label: "Customer Support & Training"},
             {value: "PSS", label: "Pre-sales Support"},
-            {value: "AnnualLeave", label: "Annual Leave"}
+            {value: "AnnualLeave", label: "Annual Leave"},
+            {value: "Demo", label: "Demo"},
+            {value: "ASS", label: "After Sales Support"}
           ]
         }
       },

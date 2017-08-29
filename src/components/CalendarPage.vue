@@ -31,14 +31,14 @@
       data() {
         return {
             startDate: moment().format("YYYY-MM-DD"),
-            endDate: moment().add(15, 'days').format("YYYY-MM-DD"),
+            endDate: moment().add(14, 'days').format("YYYY-MM-DD"),
             wcDatas:[],
             isLoading: false,
             team: 'MIK-IA',
             department: '',
             errorMsg: '',
             currentAccount: '',
-            pickedDateRange:[],
+            pickedDateRange:[moment().toDate(), moment().add(14, 'days').toDate()],
             pickOptions: {
               shortcuts: [
                 {
