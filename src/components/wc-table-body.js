@@ -68,7 +68,7 @@ export default {
   components: {wcTableCell},
   render(h) {
     return (
-      <table cellspacing="0" cellpadding="0" border="0" width={this.tbWidth}>
+      <table cellspacing="0" style="table-layout: fixed;" cellpadding="0" border="0" width={this.tbWidth}>
         <colgroup>
         {
           this._l(this.wcColumns, column =>
@@ -83,7 +83,7 @@ export default {
             <tr>
               {
                 this._l(this.wcColumns, column =>
-                <th style='border: 1px solid black;'>
+                <th style='border: 1px solid black; box-sizing:border-box;'>
                   <div>
                     {column.label}
                   </div>
@@ -102,7 +102,7 @@ export default {
               <tr>
                 {
                   this._l(itemData.items, itemCol =>
-                  <td style='border: 1px solid black; ' class={this.getCellClass(itemCol.itemData)} colspan={itemCol.colspan}>
+                  <td style='border: 1px solid black; box-sizing:border-box;' class={this.getCellClass(itemCol.itemData)} colspan={itemCol.colspan}>
                     <wcTableCell itemData={itemCol.itemData} on-ShowEditWindow={this.showEditWindow}></wcTableCell>
                   </td>)
                 }
